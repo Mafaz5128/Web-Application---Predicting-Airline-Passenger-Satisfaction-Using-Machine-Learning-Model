@@ -13,7 +13,7 @@ with open('xgb.pkl', 'rb') as f:
 
 # Extract preprocessor and model
 preprocessor = pipeline_with_preprocessor.named_steps['preprocessor']
-model = pipeline_with_preprocessor.named_steps['xgb_classifier']
+model = pipeline_with_preprocessor.named_steps['classifier']
 
 @app.route('/')
 def index():
