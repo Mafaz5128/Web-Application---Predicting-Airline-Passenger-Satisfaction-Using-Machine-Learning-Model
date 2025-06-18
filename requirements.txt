@@ -6,3 +6,4 @@ matplotlib
 Flask
 joblib
 uvicorn
+gunicorn
