@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ml-model-api
+    name: Web-Application---Predicting-Airline-Passenger-Satisfaction-Using-Machine-Learning-Model
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
