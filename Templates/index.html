@@ -1,500 +1,267 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyWings</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <title>HappyWings</title>
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
-
+    <link href="style.css" rel="stylesheet">
 </head>
-
 <body>
-  <div class="hero_area">
-    <!-- header section strats -->
-    <div class="hero_bg_box">
-      <div class="img-box">
-        <img src="images/i4.jpg" alt="">
-      </div>
-    </div>
 
-    <header class="header_section">
-      <div class="header_top">
-        <div class="container-fluid">
-                <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="index.html">
-              <span>
-                HappyWings
-              </span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""></span>
-            </button>
-
-            <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="C:\Users\mafaz\OneDrive\Desktop\Airline Passenger Statisfaction\Templates\index.html"> Passenger Survey </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html"> Passenger Review</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">About</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <!-- end header section -->
-
-    <!-- slider section -->
-    <section class=" slider_section ">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="detail-box">
-                    <h1>
-                      From Takeoff to Touchdown, <br>
-                      <span>
-                        The Journey to Happy Skies.
-                      </span>
-                    </h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="detail-box">
-                    <h1>
-                      Beyond the Clouds, <br>
-                      <span>
-                      The Science of Happy Skies.
-                      </span>
-                    </h1>
-                    <p><h3>
-                      Did you know that your preferences, seating comfort, and even your snack choices are part of a bigger picture? At HappyWings, we're tapping into the power of data to understand passenger expectations deeply.
-                   </h3> </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      
-        <div class="container idicator_container">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            
-          </ol>
-        </div>
-      </div>
-    </section>
-    <!-- end slider section -->
-  </div>
-
-  <!-- about section -->
-
-  <section class="about_section layout_padding">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 px-0">
-          <div class="img_container">
-            <div class="img-box">
-              <img src="images/i5.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 px-0">
-          <div class="detail-box">
-            <div class="heading_container ">
-              <h2>
-                Flying Together: The Heart of HappyWings
-                <h4>Every Journey Deserves a Personal Touch</h4> 
-              </h2>
-            </div>
-            <p align="justify">
-
-             Passengers are more than numbers—they’re our family in the skies. Our team listens to feedback, studies trends, and even anticipates needs to provide that special touch, whether it’s a warm blanket on a chilly flight or an extra treat for young passengers. At HappyWings, we go the extra mile to ensure every flight feels personal and memorable. Because when you’re happy, we’re doing our job right
-
-
-
-
-            </p>
-            </div>
-          </div>
-        </div>
-      </div>
+        <a class="navbar-brand fw-semibold" href="#">HappyWings</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
-  </section>
-
-  <!-- end about section -->
-
-  <!-- service section -->
-
-  <section class="service_section layout_padding">
-    <div class="container">
-        <div class="heading_container heading_center">
-            <h2>Our Services</h2>
-        </div>
-
-        <div class="detail-box">
-            <img src="images/4873.jpg" alt="Performance Navigator" class="service-image" />
-            <h6>Performance Navigator</h6>
-            <p>
-                Meet our game-changing Performance Navigator, your key to precision and productivity in garment manufacturing. Visualize success, optimize operations, and elevate efficiency effortlessly.
-            </p>
-            <a href="about.html" class="read-more-btn">Read More</a>
-        </div>
-    </div>
-</section>
+</nav>
 
 
-
-  <!-- end service section -->
-  <!-- client section -->
-
-  <section class="client_section layout_padding">
-    <div class="container ">
-      <div class="heading_container heading_center">
-        <h2>
-          What is says our clients
-        </h2>
-      </div>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/client1.jpg" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Kavishka Palihena - Charman / Sport Cloths PVT Ltd.
-                </h4>
-                <p>
-                  Incredible value! The tailored data solutions provided by STITCHING SUCCESS company have revolutionized our operations. Their expertise and commitment are unmatched. Truly a game-changer for our business.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/client2.jpg" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Ashroff Omar - CEO / Brandix PLC
-                </h4>
-                <p>
-                  Impressive results! STITCHING SUCCESS company exceeded our expectations. The innovative data products and insightful consultation transformed our strategies. A reliable and strategic partner for sustainable growth.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/client3.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Minim Veniam - CDO / Stiches PLC
-                </h4>
-                <p>
-                  Exceptional dashboards! STITCHING SUCCESS company brought clarity to our complex data. The visual excellence and real-time insights have empowered our decision-making. A crucial asset for our garment business success.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel_btn-box">
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end client section -->
-
- 
-
-  <!-- contact section -->
-
-  <section class="contact_section layout_padding">
-    <div class="contact_bg_box">
-      <div class="img-box">
-        <img src="images/4873.jpg" alt="">
-      </div>
-    </div>
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Get In touch
-        </h2>
-	<br> <h5> Have questions or need assistance? Reach out to us!</h5>
-      </div>
-      <div class="">
-        <div class="row">
-          <div class="col-md-7 mx-auto">
-            <form action="#">
-              <div class="contact_form-container">
-                <div>
-                  <div>
-                    <input type="text" placeholder="Full Name" />
-                  </div>
-                  <div>
-                    <input type="email" placeholder="Email " />
-                  </div>
-                  <div>
-                    <input type="text" placeholder="Phone Number" />
-                  </div>
-                  <div class="">
-                    <input type="text" placeholder="Message" class="message_input" />
-                  </div>
-                  <div class="btn-box ">
-                    <button type="submit">
-                      Send
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end contact section -->
-
-<!-- team section -->
-<section class="team_section layout_padding">
-  <div class="container">
-    <div class="heading_container heading_center">
-      <h2>
-        Meet Our Team
-      </h2>
-      <p>
-        Meet the driving force behind STITCHING SUCCESS, a team of dedicated professionals passionate about transforming data into innovative solutions for the garment industry.
-      </p>
-    </div>
-  <div class= "pagecontainer">
+<!-- Content Layout -->
+<div class="container-fluid">
     <div class="row">
-      <div class="col-md-4 col-sm-6 mx-auto">
-        <div class="box">
-          <div class="img-box">
-            <img src="images/t1.jpeg" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Mafaz
-            </h5>
-            <h6 class="">
-              Managing Director
-            </h6>
-          </div>
+        <!-- Description Section -->
+        <div class="col-lg-4 col-md-6 description-container">
+            <h2>Flying high with your feedback! Help us make every flight better</h2>
+            <p>Airline passenger satisfaction is essential for enhancing the travel experience and ensuring customer loyalty. By understanding passengers' feedback, airlines can improve their services, from in-flight comfort and entertainment to booking ease and punctuality. This survey helps us gather your opinions on various aspects of your flight experience, enabling us to tailor our services to meet passenger needs and expectations better.</p>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6 mx-auto">
-        <div class="box">
-          <div class="img-box">
-            <img src="images/t2.jpeg" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Disura
-            </h5>
-            <h6 class="">
-              Data Scientists
-            </h6>
-          </div>
+
+        <!-- Survey Form Section -->
+        <div class="col-lg-8 col-md-6">
+            <div class="content-container" id="survey">
+                <h2>Post-Flight Survey</h2>
+
+                <!-- User Information Form -->
+                <form id="satisfaction-form" action="/predict" method="post" style="color: rgba(255, 255, 255, 0.9);">
+                    <!-- Basic Information (Nominal Columns) -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h4 style="color: #4CAF50; margin-bottom: 20px;">Basic Information</h4>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Gender" class="form-label">Gender</label>
+                            <select class="form-control bg-dark text-white" id="Gender" name="Gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Customer Type" class="form-label">Customer Type</label>
+                            <select class="form-control bg-dark text-white" id="Customer Type" name="Customer Type" required>
+                                <option value="Loyal Customer">Loyal Customer</option>
+                                <option value="disloyal Customer">Disloyal Customer</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Type of Travel" class="form-label">Type of Travel</label>
+                            <select class="form-control bg-dark text-white" id="Type of Travel" name="Type of Travel" required>
+                                <option value="Business travel">Business</option>
+                                <option value="Personal Travel">Personal</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Class" class="form-label">Class</label>
+                            <select class="form-control bg-dark text-white" id="Class" name="Class" required>
+                                <option value="Eco">Economy</option>
+                                <option value="Business">Business</option>
+                                <option value="Eco Plus">Economy plus</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Flight Details (Numeric Columns) -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h4 style="color: #4CAF50; margin-bottom: 20px;">Personal & Flight Details</h4>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Age" class="form-label">Age</label>
+                            <input type="number" class="form-control bg-dark text-white" id="Age" name="Age" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Flight Distance" class="form-label">Flight Distance</label>
+                            <input type="number" class="form-control bg-dark text-white" id="Flight Distance" name="Flight Distance" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Departure Delay in Minutes" class="form-label">Departure Delay in Minutes</label>
+                            <input type="number" class="form-control bg-dark text-white" id="Departure Delay in Minutes" name="Departure Delay in Minutes" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Arrival Delay in Minutes" class="form-label">Arrival Delay in Minutes</label>
+                            <input type="number" class="form-control bg-dark text-white" id="Arrival Delay in Minutes" name="Arrival Delay in Minutes" required>
+                        </div>
+                    </div>
+
+                    <!-- Service Ratings (Ordinal Columns) -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h4 style="color: #4CAF50; margin-bottom: 20px;">Service Ratings (1-5)</h4>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Inflight wifi service" class="form-label">How satisfied are you with Inflight Wi-Fi Service?</label>
+                            <select class="form-control bg-dark text-white" id="Inflight wifi service" name="Inflight wifi service" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Departure/Arrival time convenient" class="form-label">How would you rate the Departure/Arrival Time Convenience?</label>
+                            <select class="form-control bg-dark text-white" id="Departure/Arrival time convenient" name="Departure/Arrival time convenient" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Ease of Online booking" class="form-label">How would you rate the Ease of Online Booking?</label>
+                            <select class="form-control bg-dark text-white" id="Ease of Online booking" name="Ease of Online booking" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Gate location" class="form-label">How satisfied are you with the Gate Location?</label>
+                            <select class="form-control bg-dark text-white" id="Gate location" name="Gate location" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Food and drink" class="form-label">How would you rate the Food and Drink service?</label>
+                            <select class="form-control bg-dark text-white" id="Food and drink" name="Food and drink" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Online boarding" class="form-label">How would you rate the online boarding facilities?</label>
+                            <select class="form-control bg-dark text-white" id="Online boarding" name="Online boarding" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Seat comfort" class="form-label">How satisfied are you with the Seat Comfort?</label>
+                            <select class="form-control bg-dark text-white" id="Seat comfort" name="Seat comfort" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Inflight entertainment" class="form-label">How would you rate the Entertainment on Board?</label>
+                            <select class="form-control bg-dark text-white" id="Inflight entertainment" name="Inflight entertainment" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="On-board service" class="form-label">How would you rate the On-board service quality?</label>
+                            <select class="form-control bg-dark text-white" id="On-board service" name="On-board service" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Leg room service" class="form-label">How would you rate the Leg room service quality?</label>
+                            <select class="form-control bg-dark text-white" id="Leg room service" name="Leg room service" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Baggage handling" class="form-label">How would you rate the Baggage Handling?</label>
+                            <select class="form-control bg-dark text-white" id="Baggage handling" name="Baggage handling" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Checkin service" class="form-label">How satisfied are you with Checkin services?</label>
+                            <select class="form-control bg-dark text-white" id="Checkin service" name="Checkin service" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Inflight service" class="form-label">How satisfied are you with Inflight Wi-Fi Service?</label>
+                            <select class="form-control bg-dark text-white" id="Inflight service" name="Inflight service" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Cleanliness" class="form-label">How would you rate the cleanliness of the Aircraft?</label>
+                            <select class="form-control bg-dark text-white" id="Cleanliness" name="Cleanliness" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-success btn-lg px-5" style="font-size: 18px;">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6 mx-auto">
-        <div class="box">
-          <div class="img-box">
-            <img src="images/t3.jpeg" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Nethmini
-            </h5>
-            <h6 class="">
-              Creative Director
-            </h6>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 mx-auto">
-        <div class="box">
-          <div class="img-box">
-            <img src="images/t4.jpeg" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Safraz
-            </h5>
-            <h6 class="">
-              Business Analyst
-            </h6>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-    
-  </div>
 </section>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- end team section -->
-<section class="info_section ">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="info_logo">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              STITCHING SUCCESS
-            </span>
-          </a>
-          <p align="justify">
-            we redefine garment industry excellence through innovative data solutions and cutting-edge analytics, fostering a future where efficiency meets style.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="info_links">
-          <h5>
-            Useful Link
-          </h5>
-          <ul>
-            <li>
-              <a href="http://127.0.0.1:5000">
-                Data Product
-              </a>
-            </li>
-            <li>
-              <a href="https://garment-worrkers-dashboard-wegt2h8sto4estkfqw3wha.streamlit.app/">
-                Productivity Dashboard
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="info_info">
-          <h5>
-            Contact Us
-          </h5>
-        </div>
-        <div class="info_contact">
-          <a href="" class="">
-            <i class="fa fa-map-marker" aria-hidden="true"></i>
-            <span>
-              University of Colombo
-            </span>
-          </a>
-          <a href="" class="">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            <span>
-              Call : +94 75 946 4464
-            </span>
-          </a>
-          <a href="" class="">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <span>
-              stitichsuccess@gmail.com
-            </span>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="info_form ">
-          <h5>
-            Newsletter
-          </h5>
-          <form action="#">
-            <input type="email" placeholder="Enter your email">
-            <button>
-              Subscribe
-            </button>
-          </form>
-          <div class="social_box">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-youtube" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- end info_section -->
-
-  <!-- footer section -->
-
-<footer class="container-fluid footer_section">
-    <p>&copy; <span id="currentYear"></span> | &nbsp Data Science Project.  &nbsp | &nbsp  All Rights Reserved.  &nbsp |  &nbsp Group H.</p>
-</footer>
-
-  <!-- footer section -->
-
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/custom.js"></script>
 </body>
-
 </html>
