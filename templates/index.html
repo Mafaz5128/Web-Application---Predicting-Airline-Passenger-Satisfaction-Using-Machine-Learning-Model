@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyWings</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-semibold" href="#">HappyWings</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+
+<!-- Content Layout -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Description Section -->
+        <div class="col-lg-4 col-md-6 description-container">
+            <h2>Flying high with your feedback! Help us make every flight better</h2>
+            <p>Airline passenger satisfaction is essential for enhancing the travel experience and ensuring customer loyalty. By understanding passengers' feedback, airlines can improve their services, from in-flight comfort and entertainment to booking ease and punctuality. This survey helps us gather your opinions on various aspects of your flight experience, enabling us to tailor our services to meet passenger needs and expectations better.</p>
+        </div>
+
+        <!-- Survey Form Section -->
+        <div class="col-lg-8 col-md-6">
+            <div class="content-container" id="survey">
+                <h2>Post-Flight Survey</h2>
+
+                <!-- User Information Form -->
+                <form id="satisfaction-form" action="/predict" method="post" style="color: rgba(255, 255, 255, 0.9);">
+                    <!-- Basic Information (Nominal Columns) -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h4 style="color: #4CAF50; margin-bottom: 20px;">Basic Information</h4>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Gender" class="form-label">Gender</label>
+                            <select class="form-control bg-dark text-white" id="Gender" name="Gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Customer Type" class="form-label">Customer Type</label>
+                            <select class="form-control bg-dark text-white" id="Customer Type" name="Customer Type" required>
+                                <option value="Loyal Customer">Loyal Customer</option>
+                                <option value="disloyal Customer">Disloyal Customer</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Type of Travel" class="form-label">Type of Travel</label>
+                            <select class="form-control bg-dark text-white" id="Type of Travel" name="Type of Travel" required>
+                                <option value="Business travel">Business</option>
+                                <option value="Personal Travel">Personal</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Class" class="form-label">Class</label>
+                            <select class="form-control bg-dark text-white" id="Class" name="Class" required>
+                                <option value="Eco">Economy</option>
+                                <option value="Business">Business</option>
+                                <option value="Eco Plus">Economy plus</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Flight Details (Numeric Columns) -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h4 style="color: #4CAF50; margin-bottom: 20px;">Personal & Flight Details</h4>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Age" class="form-label">Age</label>
+                            <input type="number" class="form-control bg-dark text-white" id="Age" name="Age" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Flight Distance" class="form-label">Flight Distance</label>
+                            <input type="number" class="form-control bg-dark text-white" id="Flight Distance" name="Flight Distance" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Departure Delay in Minutes" class="form-label">Departure Delay in Minutes</label>
+                            <input type="number" class="form-control bg-dark text-white" id="Departure Delay in Minutes" name="Departure Delay in Minutes" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Arrival Delay in Minutes" class="form-label">Arrival Delay in Minutes</label>
+                            <input type="number" class="form-control bg-dark text-white" id="Arrival Delay in Minutes" name="Arrival Delay in Minutes" required>
+                        </div>
+                    </div>
+
+                    <!-- Service Ratings (Ordinal Columns) -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h4 style="color: #4CAF50; margin-bottom: 20px;">Service Ratings (1-5)</h4>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Inflight wifi service" class="form-label">How satisfied are you with Inflight Wi-Fi Service?</label>
+                            <select class="form-control bg-dark text-white" id="Inflight wifi service" name="Inflight wifi service" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Departure/Arrival time convenient" class="form-label">How would you rate the Departure/Arrival Time Convenience?</label>
+                            <select class="form-control bg-dark text-white" id="Departure/Arrival time convenient" name="Departure/Arrival time convenient" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Ease of Online booking" class="form-label">How would you rate the Ease of Online Booking?</label>
+                            <select class="form-control bg-dark text-white" id="Ease of Online booking" name="Ease of Online booking" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Gate location" class="form-label">How satisfied are you with the Gate Location?</label>
+                            <select class="form-control bg-dark text-white" id="Gate location" name="Gate location" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Food and drink" class="form-label">How would you rate the Food and Drink service?</label>
+                            <select class="form-control bg-dark text-white" id="Food and drink" name="Food and drink" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Online boarding" class="form-label">How would you rate the online boarding facilities?</label>
+                            <select class="form-control bg-dark text-white" id="Online boarding" name="Online boarding" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Seat comfort" class="form-label">How satisfied are you with the Seat Comfort?</label>
+                            <select class="form-control bg-dark text-white" id="Seat comfort" name="Seat comfort" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Inflight entertainment" class="form-label">How would you rate the Entertainment on Board?</label>
+                            <select class="form-control bg-dark text-white" id="Inflight entertainment" name="Inflight entertainment" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="On-board service" class="form-label">How would you rate the On-board service quality?</label>
+                            <select class="form-control bg-dark text-white" id="On-board service" name="On-board service" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Leg room service" class="form-label">How would you rate the Leg room service quality?</label>
+                            <select class="form-control bg-dark text-white" id="Leg room service" name="Leg room service" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Baggage handling" class="form-label">How would you rate the Baggage Handling?</label>
+                            <select class="form-control bg-dark text-white" id="Baggage handling" name="Baggage handling" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Checkin service" class="form-label">How satisfied are you with Checkin services?</label>
+                            <select class="form-control bg-dark text-white" id="Checkin service" name="Checkin service" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Inflight service" class="form-label">How satisfied are you with Inflight Wi-Fi Service?</label>
+                            <select class="form-control bg-dark text-white" id="Inflight service" name="Inflight service" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Cleanliness" class="form-label">How would you rate the cleanliness of the Aircraft?</label>
+                            <select class="form-control bg-dark text-white" id="Cleanliness" name="Cleanliness" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-success btn-lg px-5" style="font-size: 18px;">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
