@@ -6,13 +6,16 @@ import os
 
 app = Flask(__name__, static_folder='static')
 
-# MySQL Configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')  # Example: postgres://username:password@host:port/dbname
+# PostgreSQL Configuration
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')  # e.g. 'postgresql://username:password@host:port/dbname'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+
+# Database model
 class SurveyResponse(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    __tablename__ = 'survey_responses'
+    id = db.Column(db.Integer, primary_key=True)  # You were missing the primary key
     passenger_name = db.Column(db.String(100))
     flight_date = db.Column(db.String(100))
     origin = db.Column(db.String(50))
@@ -29,7 +32,7 @@ class SurveyResponse(db.Model):
     departure_arrival_time = db.Column(db.Integer)
     prediction = db.Column(db.String(50))
 
-# Load ML pipeline
+# Load the ML pipeline
 pipeline_with_preprocessor = joblib.load('full_pipeline.joblib')
 preprocessor = pipeline_with_preprocessor.named_steps['preprocessor']
 model = pipeline_with_preprocessor.named_steps['classifier']
@@ -43,6 +46,7 @@ def index():
 def predict():
     form = request.form
 
+    # Extract and format user input for model prediction
     user_input = {
         'Gender': form['Gender'],
         'Customer Type': form['Customer Type'],
@@ -68,12 +72,13 @@ def predict():
         'Arrival Delay in Minutes': float(form['Arrival Delay in Minutes'])
     }
 
-    # Prediction
+    # Perform prediction
     input_df = pd.DataFrame([user_input])
     preprocessed_input = preprocessor.transform(input_df)
     prediction = model.predict(preprocessed_input)[0]
     result = 'Satisfied' if prediction == 1 else 'Neutral or dissatisfied'
 
+    # Store to DB
     response = SurveyResponse(
         passenger_name=form['PassengerName'],
         flight_date=form['Date'],
@@ -93,6 +98,7 @@ def predict():
     )
     db.session.add(response)
     db.session.commit()
+
     return render_template('output.html', result=result)
 
 # Flask App Runner
