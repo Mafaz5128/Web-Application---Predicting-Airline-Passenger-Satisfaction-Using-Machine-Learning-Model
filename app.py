@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from flask_mysqldb import MySQL
+from flask_sqlalchemy import SQLAlchemy
 import pandas as pd
 import joblib
 import os
@@ -7,12 +7,27 @@ import os
 app = Flask(__name__, static_folder='static')
 
 # MySQL Configuration
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'  # replace with your actual MySQL user
-app.config['MYSQL_PASSWORD'] = 'mfz4u_6221616'  # replace with your actual password
-app.config['MYSQL_DB'] = 'happywings'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('postgresql://happywings_db_user:7zapsCdtOauuv5mHbyNHaKDQSZvycDgu@dpg-d1ajnaumcj7s73fk5qrg-a/happywings_db')  # Example: postgres://username:password@host:port/dbname
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-mysql = MySQL(app)
+db = SQLAlchemy(app)
+class SurveyResponse(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    passenger_name = db.Column(db.String(100))
+    flight_date = db.Column(db.String(100))
+    origin = db.Column(db.String(50))
+    destination = db.Column(db.String(50))
+    gender = db.Column(db.String(20))
+    customer_type = db.Column(db.String(50))
+    travel_type = db.Column(db.String(50))
+    flight_class = db.Column(db.String(50))
+    age = db.Column(db.Float)
+    flight_distance = db.Column(db.Float)
+    departure_delay = db.Column(db.Float)
+    arrival_delay = db.Column(db.Float)
+    inflight_wifi_service = db.Column(db.Integer)
+    departure_arrival_time = db.Column(db.Integer)
+    prediction = db.Column(db.String(50))
 
 # Load ML pipeline
 pipeline_with_preprocessor = joblib.load('full_pipeline.joblib')
@@ -27,7 +42,6 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     form = request.form
-    cursor = mysql.connection.cursor()
 
     user_input = {
         'Gender': form['Gender'],
@@ -60,31 +74,25 @@ def predict():
     prediction = model.predict(preprocessed_input)[0]
     result = 'Satisfied' if prediction == 1 else 'Neutral or dissatisfied'
 
-    # Save to MySQL
-    cursor.execute("""
-        INSERT INTO survey_responses (
-            passenger_name, flight_date, origin, destination, gender, customer_type, travel_type,
-            flight_class, age, flight_distance, departure_delay, arrival_delay,
-            inflight_wifi_service, departure_arrival_time, online_booking, gate_location,
-            food_and_drink, online_boarding, seat_comfort, inflight_entertainment,
-            onboard_service, leg_room, baggage_handling, checkin_service,
-            inflight_service, cleanliness, prediction
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-    """, (
-        form['PassengerName'], form['Date'], form['Origin'], form['Destination'],
-        form['Gender'], form['Customer Type'], form['Type of Travel'], form['Class'],
-        form['Age'], form['Flight Distance'], form['Departure Delay in Minutes'],
-        form['Arrival Delay in Minutes'], form['Inflight wifi service'],
-        form['Departure/Arrival time convenient'], form['Ease of Online booking'],
-        form['Gate location'], form['Food and drink'], form['Online boarding'],
-        form['Seat comfort'], form['Inflight entertainment'], form['On-board service'],
-        form['Leg room service'], form['Baggage handling'], form['Checkin service'],
-        form['Inflight service'], form['Cleanliness'], result
-    ))
-
-    mysql.connection.commit()
-    cursor.close()
-
+    response = SurveyResponse(
+        passenger_name=form['PassengerName'],
+        flight_date=form['Date'],
+        origin=form['Origin'],
+        destination=form['Destination'],
+        gender=form['Gender'],
+        customer_type=form['Customer Type'],
+        travel_type=form['Type of Travel'],
+        flight_class=form['Class'],
+        age=float(form['Age']),
+        flight_distance=float(form['Flight Distance']),
+        departure_delay=float(form['Departure Delay in Minutes']),
+        arrival_delay=float(form['Arrival Delay in Minutes']),
+        inflight_wifi_service=int(form['Inflight wifi service']),
+        departure_arrival_time=int(form['Departure/Arrival time convenient']),
+        prediction=result
+    )
+    db.session.add(response)
+    db.session.commit()
     return render_template('output.html', result=result)
 
 # Flask App Runner
