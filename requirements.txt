@@ -7,3 +7,4 @@ Flask
 joblib
 uvicorn
 gunicorn
+Flask-MySQLdb
