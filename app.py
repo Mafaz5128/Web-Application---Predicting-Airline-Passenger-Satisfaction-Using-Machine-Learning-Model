@@ -7,7 +7,7 @@ import os
 app = Flask(__name__, static_folder='static')
 
 # MySQL Configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('postgresql://happywings_db_user:7zapsCdtOauuv5mHbyNHaKDQSZvycDgu@dpg-d1ajnaumcj7s73fk5qrg-a/happywings_db')  # Example: postgres://username:password@host:port/dbname
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('postgresql://happywings_db_user:7zapsCdtOauuv5mHbyNHaKDQSZvycDgu@dpg-d1ajnaumcj7s73fk5qrg-a.oregon-postgres.render.com/happywings_db')  # Example: postgres://username:password@host:port/dbname
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
