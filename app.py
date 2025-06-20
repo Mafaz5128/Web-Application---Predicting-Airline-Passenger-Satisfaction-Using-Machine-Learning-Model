@@ -32,6 +32,9 @@ class SurveyResponse(db.Model):
     departure_arrival_time = db.Column(db.Integer)
     prediction = db.Column(db.String(50))
 
+with app.app_context():
+    db.create_all()
+
 # Load the ML pipeline
 pipeline_with_preprocessor = joblib.load('full_pipeline.joblib')
 preprocessor = pipeline_with_preprocessor.named_steps['preprocessor']
