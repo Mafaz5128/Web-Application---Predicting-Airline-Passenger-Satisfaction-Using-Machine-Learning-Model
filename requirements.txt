@@ -7,4 +7,5 @@ Flask
 joblib
 uvicorn
 gunicorn
-Flask-MySQLdb
+psycopg2-binary
+flask_sqlalchemy
