@@ -58,7 +58,7 @@ def predict():
         'Class': form['Class'],
         'Flight Distance': float(form['FlightDistance']),
         'Inflight wifi service': int(form['InflightWifiService']),
-        'Departure/Arrival time convenient': int(form['Departure/Arrival time convenient']),
+        'Departure/Arrival time convenient': int(form['DepartureArrivalTimeConvenient']),
         'Ease of Online booking': int(form['EaseOfOnlineBooking']),
         'Gate location': int(form['GateLocation']),
         'Food and drink': int(form['FoodAndDrink']),
@@ -96,7 +96,7 @@ def predict():
         departure_delay=float(form['DepartureDelay']),
         arrival_delay=float(form['ArrivalDelay']),
         inflight_wifi_service=int(form['InflightWifiService']),
-        departure_arrival_time=int(form['Departure/Arrival time convenient']),
+        departure_arrival_time=int(form['DepartureArrivalTimeConvenient']),
         prediction=result
     )
     db.session.add(response)
