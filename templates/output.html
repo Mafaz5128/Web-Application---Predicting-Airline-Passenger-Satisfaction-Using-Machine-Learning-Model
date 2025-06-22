@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survey Prediction Result</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyWings - Thank You</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+    .thank-you-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      width: 90%;
+    }
 
-        h2 {
-            color: #28a745; /* Green for thank you */
-            margin-bottom: 20px;
-        }
+    .thank-you-box h2 {
+      color: #00e676;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
 
-        p {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 15px;
-        }
+    .thank-you-box p {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #fff;
+    }
 
-        .result {
-            font-size: 24px;
-            font-weight: bold;
-            color: #007bff; /* Blue for result text */
-        }
+    .result {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffd54f;
+      margin-bottom: 25px;
+    }
 
-        .back-btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+    .back-btn {
+      background-color: #00e676;
+      border: none;
+      color: #003c6c;
+      padding: 12px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-        .back-btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    .back-btn:hover {
+      background-color: #00c853;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Thank You!</h2>
-        <p>Based on your feedback, you are:</p>
-        <div class="result">{{ result }}</div>
-        <a href="/" class="back-btn">Back to Home</a>
-    </div>
+  <div class="thank-you-box">
+    <h2>Thank You for Flying with HappyWings! 🛫</h2>
+    <p>Based on your feedback, you are:</p>
+    <div class="result">{{ prediction }}</div>
+    <a href="/" class="back-btn">Back to Home</a>
+  </div>
 </body>
 </html>
