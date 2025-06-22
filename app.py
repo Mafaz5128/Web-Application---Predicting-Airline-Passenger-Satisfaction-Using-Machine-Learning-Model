@@ -65,14 +65,14 @@ def predict():
         'Online boarding': int(form['OnlineBoarding']),
         'Seat comfort': int(form['SeatComfort']),
         'Inflight entertainment': int(form['InflightEntertainment']),
-        'On-board service': int(form['On-boardService']),
+        'On-board service': int(form['OnBoardService']),
         'Leg room service': int(form['LegRoomService']),
         'Baggage handling': int(form['BaggageHandling']),
         'Checkin service': int(form['CheckinService']),
         'Inflight service': int(form['InflightService']),
         'Cleanliness': int(form['Cleanliness']),
-        'Departure Delay in Minutes': float(form['Departure Delay in Minutes']),
-        'Arrival Delay in Minutes': float(form['Arrival Delay in Minutes'])
+        'Departure Delay in Minutes': float(form['DepartureDelay']),
+        'Arrival Delay in Minutes': float(form['ArrivalDelay'])
     }
 
     # Perform prediction
@@ -88,14 +88,14 @@ def predict():
         origin=form['Origin'],
         destination=form['Destination'],
         gender=form['Gender'],
-        customer_type=form['Customer Type'],
-        travel_type=form['Type of Travel'],
+        customer_type=form['CustomerType'],
+        travel_type=form['TypeOfTravel'],
         flight_class=form['Class'],
         age=float(form['Age']),
-        flight_distance=float(form['Flight Distance']),
-        departure_delay=float(form['Departure Delay in Minutes']),
-        arrival_delay=float(form['Arrival Delay in Minutes']),
-        inflight_wifi_service=int(form['Inflight wifi service']),
+        flight_distance=float(form['FlightDistance']),
+        departure_delay=float(form['DepartureDelay']),
+        arrival_delay=float(form['ArrivalDelay']),
+        inflight_wifi_service=int(form['InflightWifiService']),
         departure_arrival_time=int(form['Departure/Arrival time convenient']),
         prediction=result
     )
