@@ -13,3 +13,4 @@ This project is a responsive, full-stack web application that predicts airline p
 ☁️ Deployment: Deployed seamlessly on Render, ensuring live accessibility of the application.
 ## App Link : https://web-application-predicting-airline.onrender.com/
 
+![HappyWings](https://github.com/user-attachments/assets/ac8c1d12-3a90-4d34-8f3c-33572fddfe10)
